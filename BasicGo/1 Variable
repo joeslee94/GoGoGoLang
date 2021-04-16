@@ -1,0 +1,74 @@
+package main
+
+import(
+	"fmt"
+	"strconv"
+)
+
+//OUTSIDE MAIN DECLARATION AT PACKAGE LEVEL
+//var m int = 45
+
+//CLEAN UP VAR --> by using a var block
+//var actorName string = "ActorOne"
+//var companion string = "CompanionOne"
+//var docrorNumber int = 3
+//var season int = 3
+
+//var(
+//	actorName string = "ActorOne"
+//	companion string = "CompanionOne"
+//	docrorNumber int = 3
+//	season int = 3
+//)
+
+//VARIABLE in the innermost function takes precedence
+//example i outside in package <<< is less impt than <<< i inside main
+
+func main(){
+	//DECLARING VARIABLE AND THEN GIVING IT A VALUE
+	//var i int
+	//i = 42
+	
+	//DECLARING VARIABLE AND VALUE SAME LINE
+	//var i int = 42
+	
+	//INTEGER I AND PRINTING IT
+	//i := 42
+	//fmt.Println(i)
+	
+	
+	//PRINTS THE VALUE, TYPE of K
+	//k := 90
+	//fmt.Printf("%v, %T", k, k)
+	
+	//j := 95. //with the period at the end makes it a float
+	//fmt.Printf("%v, %T", j, j)
+	
+	//fmt.Printf("%v, %T", m, m)
+	
+	//Z IS DECLARED BUT NOT USED
+	//zNotUsed := 5
+	
+	var i int = 42
+	
+	//var j float32
+	//j = float32(i)
+	//fmt.Println(j)
+	
+	var k string
+	k = strconv.Itoa(i)
+	fmt.Println(k)
+	
+	fmt.Println("End of Program")
+}
+//All variables MUST be used
+
+//NAMING CONVENTIONS
+//Declaring a lower case variable (i) in package only recognizable in the package (seems like class?)
+//any file in package can access this variable == protected access modifier
+
+//Declaring an upper case variable (I) == public access modifier
+
+//Block scope == ONLY WITHIN THAT METHOD/FUNCTION
+
+//Length of the variable reflects the lifespan of the variable
