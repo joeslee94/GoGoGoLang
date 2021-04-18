@@ -1,0 +1,118 @@
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	//BOOLEANS cannot convert to integers and is its own type
+	var boolOne bool = false
+	fmt.Println(boolOne)
+	fmt.Printf("%v, %T\n", boolOne, boolOne)
+
+	testOne := 1 == 2
+	testTwo := 1 == 1
+
+	fmt.Println(testOne)
+	fmt.Println(testTwo)
+
+	when a bool is made it is initialized to zero
+	var boolZero bool
+	fmt.Printf("%v, %T\n", boolZero, boolZero)
+
+	//INTEGERS signed and unsigned
+	intOne := 10
+	fmt.Printf("%v, %T\n", intOne, intOne)
+
+	var unsignedIntOne uint16 = 20
+	fmt.Printf("%v, %T\n", unsignedIntOne, unsignedIntOne)
+
+	intTwo := 3
+	intThree := 10
+	fmt.Println(intThree + intTwo)
+	fmt.Println(intThree - intTwo)
+	fmt.Println(intThree * intTwo)
+	fmt.Println(intThree / intTwo)
+	fmt.Println(intThree % intTwo)
+
+	lastIntExample := 8              // 2^3
+	fmt.Println(lastIntExample << 3) // 8 * 2^3
+	fmt.Println(lastIntExample >> 3) // 8 / 2^3
+
+	lastIntExampleTwo := 9              // 2^3
+	fmt.Println(lastIntExampleTwo << 3) // 9 * 2^3
+	fmt.Println(lastIntExampleTwo >> 2) // 9 / 2^3
+
+	//can't add integers of different types int and int8, 16, 32, 64
+
+	//BIT OPERATORS
+	bit operators
+	bitIntOne := 2 //010
+	bitIntTwo := 4 //100
+	fmt.Println(bitIntOne & bitIntTwo) //both need to be 1 to be 1 so: 000
+	fmt.Println(bitIntOne | bitIntTwo) //1 or the other need to be 1 so: 110
+	fmt.Println(bitIntOne ^ bitIntTwo) //if double 1 then it becomes 0: 110
+	fmt.Println(bitIntOne &^ bitIntTwo) //if double 0 then it becomes 1: 001
+
+	bitIntOne := 6                      //110
+	bitIntTwo := 4                      //100
+	fmt.Println(bitIntOne & bitIntTwo)  //(1,1) == 1, (1,0) == 0, (0,0) == 0: 100
+	fmt.Println(bitIntOne | bitIntTwo)  //(1,1) == 1, (1,0) == 1, (0,0) == 0: 110
+	fmt.Println(bitIntOne ^ bitIntTwo)  //(1,1) == 0, (1,0) == 1, (0,0) == 0: 010
+	fmt.Println(bitIntOne &^ bitIntTwo) //(1,1) == 0, (1,0) == 0, (0,0) == 1: 001
+
+	bitIntOne := 8                      //1000
+	bitIntTwo := 10                     //1010
+	fmt.Println(bitIntOne & bitIntTwo)  //(1,1) == 1, (1,0) == 0, (0,0) == 0: 1000
+	fmt.Println(bitIntOne | bitIntTwo)  //(1,1) == 1, (1,0) == 1, (0,0) == 0: 1010
+	fmt.Println(bitIntOne ^ bitIntTwo)  //(1,1) == 0, (1,0) == 1, (0,0) == 0: 0010
+	fmt.Println(bitIntOne &^ bitIntTwo) //(1,1) == 0, (1,0) == 0, (0,0) == 0: 0000
+
+	//FLOATING NUMBERS can use e to denote exponents
+	var explicitFloat float32 = 4.91023
+	fmt.Println(explicitFloat)
+
+	floatOne := 3.14
+	fmt.Println(floatOne)
+
+	//COMPLEX NUMBERS --> real, imag, complex
+	complexOne := 1 + 2i
+	fmt.Printf("%v, %T\n", complexOne, complexOne)
+
+	complexTwo := 8 + 5.5i
+	fmt.Printf("%v, %T\n", complexTwo, complexTwo)
+
+	fmt.Println(complexOne + complexTwo)
+	fmt.Println(complexOne - complexTwo)
+	fmt.Println(complexOne * complexTwo)
+	fmt.Println(complexOne / complexTwo)
+
+	complexThree := imag(complexOne)
+	complexFour := imag(complexTwo)
+	fmt.Println(complexThree * complexFour)
+
+	realThree := real(complexOne)
+	realFour := real(complexTwo)
+	fmt.Println(realThree * realFour)
+
+	//can create complex numbers on the fly with complex(realnumval, imagnumval) --> realnumval + imagnumval(i)
+
+	//STRING TYPE can be converted back an forth
+	stringOne := "This is a string!"
+	fmt.Printf("%v, %T\n", stringOne, stringOne)
+	fmt.Printf("%v, %T\n", stringOne[5], stringOne[5])
+	fmt.Printf("%v, %T\n", string(stringOne[5]), stringOne[5])
+
+	stringTwo := "This is a second string"
+	fmt.Printf("%v, %T\n", stringOne+" "+stringTwo, stringOne+" "+stringTwo)
+
+	byteSlice := []byte(stringOne)
+	fmt.Printf("%v, %T\n", byteSlice, byteSlice) //comes out as ASCII values **spaces are ASCII 32
+	fmt.Printf("%v, %T\n", string(byteSlice), string(byteSlice))
+
+	//RUNE TYPE type alias for type 32 utf32 set
+	runeOne := 'a'
+	fmt.Printf("%v, %T\n", runeOne, runeOne)
+
+	fmt.Println("No Errors!")
+}
